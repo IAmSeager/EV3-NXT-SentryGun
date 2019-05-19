@@ -17,8 +17,10 @@ def sentryscan():
         time.sleep(2.5)
 
 cap = cv2.VideoCapture(1)
-cap.set(3, 640) #WIDTH
-cap.set(4, 480) #HEIGH
+cap.set(3, 640) #WIDHT
+cap.set(4, 480) #HEIGHT
+cap.set(cv2.CAP_PROP_AUTO_EXPOSURE, 0.25)
+cap.set(cv2.CAP_PROP_EXPOSURE, -8)
 
 face_cascade = cv2.CascadeClassifier('haar/haarcascade_frontalface_default.xml')
 eye_cascade = cv2.CascadeClassifier('haar/haarcascade_profileface.xml')
